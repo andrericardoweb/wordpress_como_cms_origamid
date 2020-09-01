@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 		<section class="container contato">
 			<h2 class="subtitulo">Contato</h2>
 
@@ -25,4 +26,5 @@
 				<p>Brasil - Terra - Via Láctea</p>
 			</div>
 		</section>
-<?php get_footer(); ?>
+
+		<?php get_footer(); ?>
