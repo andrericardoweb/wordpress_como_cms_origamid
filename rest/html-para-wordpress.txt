@@ -75,6 +75,28 @@ Adicionar o conteúdo a interface do Custom Fields.
 14 - Pegar valores de outras páginas
 
 <?php
-$contato = get_page_by_title('contato');
-the_field('telefone', $contato)
+	$contato = get_page_by_title('contato');
+	the_field('telefone', $contato)
 ?>
+
+15 - Terminar de adicionar os outros campos
+<?php echo date("Y"); ?> (Mostrar a data)
+
+16 - Adicionar campos para SEO
+<title><?php bloginfo('name'); ?> - <?php wp_title(''); ?> <?php the_field('title_seo'); ?></title>
+<meta name="description" content="<?php bloginfo('name'); ?> - <?php wp_title(''); ?> <?php the_field('description_seo'); ?>">
+
+17 - Adicionar o Functions.php
+
+// Habilitar Menus
+add_theme_support('menus');
+
+// Funções para Limpar o Header
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'start_post_rel_link', 10, 0 );
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action('wp_head', 'feed_links_extra', 3 );
+remove_action('wp_head', 'wp_generator' );
+
+18 - Adicionar o Menu
