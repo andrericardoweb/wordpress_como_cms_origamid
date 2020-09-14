@@ -125,6 +125,14 @@ if(!is_page('sobre')) {
 15 - Terminar de adicionar os outros campos
 <?php echo date("Y"); ?> (Mostrar a data)
 
+
+<style type="text/css">
+	.titulo {
+		background-image: url('<?php the_field(‘background’); ?>’);
+	}
+</style>
+
+
 16 - Adicionar campos para SEO
 <title><?php bloginfo('name'); ?> - <?php wp_title(''); ?> <?php the_field('title_seo'); ?></title>
 <meta name="description" content="<?php bloginfo('name'); ?> - <?php wp_title(''); ?> <?php the_field('description_seo'); ?>">
