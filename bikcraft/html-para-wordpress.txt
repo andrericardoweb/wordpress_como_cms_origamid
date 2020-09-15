@@ -231,6 +231,7 @@ O template utilizado é single-slug.php (ou index.php caso não exista)
 // Habilitar Menus
 add_theme_support('menus');
 
+// Registrar o Menu
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Header Menu' ));
 }
@@ -239,7 +240,15 @@ add_action( 'init', 'register_my_menu' );
 <?php
 	$args = array(
 		'menu' => 'principal',
+		'theme_location' => 'menu-principal',
 		'container' => false
 	);
 	wp_nav_menu( $args );
 ?>
+
+Adicionar o css
+.current_page_item a
+
+20 - Adicionar o JS e o CSS da forma correta
+
+21 - Adicionar o SEO
