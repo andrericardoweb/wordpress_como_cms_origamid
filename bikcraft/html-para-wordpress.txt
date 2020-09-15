@@ -213,17 +213,18 @@ O template utilizado é single-slug.php (ou index.php caso não exista)
 
 <?php
 	$args = array (
-		'post_type' => 'produtos'
+		'post_type' => 'produtos',
+		'order'   => 'ASC'
 	);
 	$the_query = new WP_Query ( $args );
 ?>
 
-<?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	<h1><?php the_title(); ?></h1>
 <?php endwhile; else: endif; ?>
 
-
-
+// Reset o Loop
+<?php wp_reset_query(); wp_reset_postdata(); ?>
 
 19 - Adicionar o Menu
 
